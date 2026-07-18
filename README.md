@@ -15,7 +15,7 @@ Every strategy here was backtested on 16 A-share indices from 1990 to 2026. The 
 quant-strategies-book/
 ├── book/              ← Book manuscript (All Rights Reserved)
 ├── code/              ← 11 runnable Python lessons (MIT License)
-├── data/              ← Data pipeline documentation
+├── data/              ← Pre-packaged index + PE data (1990-2026)
 ├── output/charts/     ← Generated charts
 └── references/        ← Bibliography
 ```
@@ -55,9 +55,16 @@ The PE strategy's +44.5% alpha was a mirage — it disappeared when the data win
 
 **The value of these notebooks is not the strategies. It's the firsthand experience of watching a +44.5% alpha evaporate when you add 9 more years of data.**
 
-## Data Source
+## Data
 
-All index data from [akshare](https://github.com/akfamily/akshare), a free Chinese financial data library. Data files are not included in this repository; use `update_data.py` to pull the latest.
+Pre-packaged data is included in `data/` so you can start immediately:
+
+| File | Content | Size |
+|------|---------|:---:|
+| `index_updated.csv` | 16 A-share indices daily returns (1990-2026) | ~2MB |
+| `*_pe_weekly.csv` | Weekly PE data for CSI300, SH50, CSI500, SZ Dividend | ~50KB each |
+
+To pull the latest data yourself: `python code/update_data.py` (requires [akshare](https://github.com/akfamily/akshare)).
 
 ## About the Author
 
