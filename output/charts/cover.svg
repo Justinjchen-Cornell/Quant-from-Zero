@@ -1,40 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a1a2e"/>
-      <stop offset="100%" stop-color="#16213e"/>
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#161b22"/>
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#58a6ff"/>
+    </linearGradient>
+    <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c92a2a"/>
+      <stop offset="50%" stop-color="#f08c00"/>
+      <stop offset="100%" stop-color="#2ea043"/>
     </linearGradient>
   </defs>
-  
-  <!-- Background -->
-  <rect width="600" height="400" fill="url(#bg)"/>
-  
-  <!-- Chart grid lines -->
-  <line x1="100" y1="280" x2="500" y2="280" stroke="#2a2a4a" stroke-width="0.5"/>
-  <line x1="100" y1="220" x2="500" y2="220" stroke="#2a2a4a" stroke-width="0.5"/>
-  <line x1="100" y1="160" x2="500" y2="160" stroke="#2a2a4a" stroke-width="0.5"/>
-  
-  <!-- Chart line - jagged start -->
-  <polyline points="100,240 130,220 160,250 190,210 220,200 250,230 280,180 310,190 340,170 370,190 400,150 430,160 460,140 500,120"
-    fill="none" stroke="#1971c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Transformed arrow -->
-  <polyline points="500,120 540,100 580,70"
-    fill="none" stroke="#1971c2" stroke-width="3" stroke-linecap="round"/>
-  <polygon points="580,70 570,78 575,68" fill="#1971c2"/>
-  
-  <!-- Alpha annotation -->
-  <text x="320" y="145" fill="#f08c00" font-family="monospace" font-size="14" opacity="0.8">+44.5%</text>
-  <text x="320" y="165" fill="#c92a2a" font-family="monospace" font-size="14" opacity="0.6">+0.1%</text>
-  
-  <!-- Title -->
-  <text x="300" y="50" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="bold" text-anchor="middle">从零开始跑量化</text>
-  <text x="300" y="80" fill="#868e96" font-family="sans-serif" font-size="14" text-anchor="middle">11 堂课 × 30 年真实数据</text>
-  
-  <!-- Author -->
-  <text x="300" y="350" fill="#868e96" font-family="sans-serif" font-size="12" text-anchor="middle">陈嘉 著</text>
-  
-  <!-- License badge -->
-  <rect x="460" y="365" width="120" height="20" rx="4" fill="#2a2a4a" stroke="#4a4a6a" stroke-width="0.5"/>
-  <text x="520" y="379" fill="#868e96" font-family="sans-serif" font-size="9" text-anchor="middle">CC BY-NC-ND 4.0</text>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- Subtle grid -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#21262d" stroke-width="0.5"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#grid)" opacity="0.5"/>
+
+  <!-- Chart area -->
+  <g transform="translate(120, 220)">
+    <!-- Grid lines -->
+    <line x1="0" y1="80" x2="560" y2="80" stroke="#21262d" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="560" y2="40" stroke="#21262d" stroke-width="0.5"/>
+    <line x1="0" y1="0" x2="560" y2="0" stroke="#21262d" stroke-width="0.5"/>
+
+    <!-- Main chart line - dramatic transformation -->
+    <polyline points="0,70 30,60 60,80 90,50 120,40 150,65 180,20 210,30 240,10 270,35 300,5 330,15 360,-5 390,10 420,-15 450,-5 480,-25 510,-35 540,-55 560,-70"
+      fill="none" stroke="url(#lineGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Arrow -->
+    <polygon points="560,-70 548,-62 552,-75" fill="#2ea043"/>
+
+    <!-- Alpha annotation - faded out -->
+    <text x="280" y="-45" fill="#f08c00" font-family="monospace" font-size="16" font-weight="bold" opacity="0.9">+44.5%</text>
+    <text x="280" y="-25" fill="#c92a2a" font-family="monospace" font-size="14" opacity="0.5" text-decoration="line-through">alpha</text>
+
+    <!-- Small label -->
+    <text x="280" y="130" fill="#8b949e" font-family="sans-serif" font-size="11">1990 ———— 2026  ·  16 A-share indices  ·  8683 trading days</text>
+  </g>
+
+  <!-- TITLE - BOLD, LARGE, DOMINANT -->
+  <text x="400" y="120" fill="url(#titleGrad)" font-family="sans-serif" font-size="52" font-weight="900" text-anchor="middle" letter-spacing="3">从零开始跑量化</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="160" fill="#8b949e" font-family="sans-serif" font-size="18" text-anchor="middle" letter-spacing="1">11 堂课 × 30 年真实数据</text>
+
+  <!-- English tagline -->
+  <text x="400" y="190" fill="#58a6ff" font-family="monospace" font-size="13" text-anchor="middle" opacity="0.8">Run Your First Quant Strategy. With Real Code. With Real Data. With Real Failures.</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="460" width="800" height="40" fill="#0d1117" opacity="0.8"/>
+  <text x="400" y="485" fill="#8b949e" font-family="sans-serif" font-size="13" text-anchor="middle">陈嘉 著</text>
+  <rect x="640" y="468" width="140" height="24" rx="6" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+  <text x="710" y="484" fill="#8b949e" font-family="sans-serif" font-size="10" text-anchor="middle">CC BY-NC-ND 4.0</text>
+
+  <!-- Badges -->
+  <rect x="20" y="468" width="80" height="24" rx="6" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+  <text x="60" y="484" fill="#2ea043" font-family="monospace" font-size="11" text-anchor="middle">Python</text>
+  <rect x="110" y="468" width="100" height="24" rx="6" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+  <text x="160" y="484" fill="#f08c00" font-family="monospace" font-size="11" text-anchor="middle">11 Lessons</text>
+  <rect x="220" y="468" width="120" height="24" rx="6" fill="#21262d" stroke="#30363d" stroke-width="0.5"/>
+  <text x="280" y="484" fill="#58a6ff" font-family="monospace" font-size="11" text-anchor="middle">30yr Real Data</text>
 </svg>

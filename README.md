@@ -1,8 +1,9 @@
 <p align="center">
-  <img src="output/charts/cover.svg" alt="从零开始跑量化" width="600">
+  <img src="output/charts/cover.svg" alt="从零开始跑量化" width="800">
 </p>
 
-# 从零开始跑量化：11 堂课 x 30 年真实数据
+<h1 align="center">从零开始跑量化</h1>
+<h3 align="center">11 堂课 × 30 年真实数据 · 16 个 A 股指数 · 8683 个交易日</h3>
 
 > **Turn "what should I buy?" into "what does the data say?"**
 > *A practitioner's guide to quantitative thinking — with real code, real data, and real failures.*
