@@ -1,94 +1,70 @@
-<p align="center">
-  <img src="output/charts/cover.svg" alt="从零开始跑量化" width="800">
-</p>
+# 从零开始跑量化
 
-<h1 align="center">从零开始跑量化</h1>
-<h3 align="center">11 堂课 × 30 年真实数据 · 16 个 A 股指数 · 8683 个交易日</h3>
+> ### 这些策略脚本、Notebook 不是让你去跑量化交易的。
+> ### 它们是一套思维训练工具
+> ### ——让你理解量化思维的边界、学会评估任何策略的有效性、然后把方法论迁移到你真正有信息优势的领域。
 
-> **Turn "what should I buy?" into "what does the data say?"**
-> *A practitioner's guide to quantitative thinking — with real code, real data, and real failures.*
->
-> A practitioner's guide to quantitative thinking — with real code, real data, and real failures.
+<p align="center"><img src="output/charts/cover.svg" width="800"></p>
 
-[![License: CC BY-NC-ND 4.0](https://img.shields.io/badge/License-CC%20BY--NC--ND%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
-[![Code: MIT](https://img.shields.io/badge/Code-MIT-green.svg)](LICENSE)
-[![Python 3.9+](https://img.shields.io/badge/Python-3.9%2B-blue.svg)](https://www.python.org/)
+[![License](https://img.shields.io/badge/License-CC_BY--NC--ND_4.0-lightgrey)](https://creativecommons.org/licenses/by-nc-nd/4.0/) [![Code](https://img.shields.io/badge/Code-MIT-green)](LICENSE) [![Python](https://img.shields.io/badge/Python-3.9+-blue)](https://www.python.org/)
+
+> [English version](README_EN.md)
 
 ---
 
-## Why This Book Exists
+## 既然策略不能赚钱，这本书的价值在哪里
 
-Most quant books teach you strategies that "worked in backtesting." This book teaches you **why they fail in reality** — and what to do about it.
+市面上所有的量化入门书都在教你——学会某个策略，年化30%。
 
-The headline finding: A PE quantile strategy showed **+44.5% annual alpha** on 2000-2017 data. When the data window extended to 1990-2026, alpha collapsed to **+0.1%**. The strategy was never real — it was a sample bias.
+这本书告诉你——**那个策略的回测 +44.5% 是假的。**
 
-**This book is the firsthand account of watching that happen.**
+不是策略失效了。是从未有效过。+44.5% 的超额收益，只是因为回测数据刚好停在 2017 年牛市顶点。把数据扩展到 2026 年，它变成了 +0.1%。
 
-## What You'll Learn
+**这本书就是你亲眼看着 +44.5% 消失的全过程。** 这比读一百篇量化论文更能教会你什么叫回测——以及为什么不要相信任何回测结果。
 
-| # | Chapter | Core Question | Code |
-|:-:|---------|--------------|:--:|
-| 0 | Preface | Why these strategies are not for trading | — |
-| 1 | Descriptive Statistics | Which index is the riskiest? | [lesson1](code/lesson1_descriptive.py) |
-| 2 | PE Quantile | Is it cheap relative to its own history? | [lesson2](code/lesson2_pe_quantile.py) |
-| 3 | Mean-StdDev | How far from normal is the PE? | [lesson3](code/lesson3_mean_std.py) |
-| 4 | Monte Carlo | What's the full range of possible futures? | [lesson4](code/lesson4_monte_carlo.py) |
-| 5 | Signal Trading | Are external signals worth following? | [lesson5](code/lesson5_signals.py) |
-| 6 | Return Distributions | Do returns look like a bell curve? | [lesson6](code/lesson6_return_dist.py) |
-| 7 | Calendar Patterns | Do streaks predict reversals? | [lesson7](code/lesson7_calendar.py) |
-| 8 | Online Statistics | Did my backtest cheat? | [lesson8](code/lesson8_online_update.py) |
-| 9 | Momentum | Does trending beat mean-reversion? | [lesson9](code/lesson9_momentum.py) |
-| 10 | Sharpe Ratio | How much return per unit of risk? | [lesson10](code/lesson10_sharpe.py) |
-| 11 | Strong-Weak | What can jump levels tell us? | [lesson11](code/lesson11_strong_weak.py) |
-| 12 | Final Chapter | From backtest to wisdom | — |
+## 适合谁读
 
-## Quick Start
+| 适合 | 不适合 |
+|------|--------|
+| 想学量化但被公式劝退的人 | 想找稳赚策略的人 |
+| 做了几年投资想识破回测骗局的人 | 想要 PhD 级别模型的人 |
+| 想把量化思维迁移到本行业的人 | 期望一夜暴富的人 |
+| 被历史年化收益忽悠过的人 | |
 
-```bash
-git clone https://github.com/Justinjchen-Cornell/quant-from-zero.git
-cd quant-from-zero
-pip install -r requirements.txt
-python code/lesson1_descriptive.py
-```
+## 十一课内容
 
-**Pre-packaged data included.** 16 A-share indices from 1990 to 2026, plus PE data for CSI300, SH50, CSI500, and SZ Dividend. No API keys needed to start.
+| # | 核心问题 | 关键发现 |
+|:-:|---------|---------|
+| 1 | 哪个 A 股指数风险最大？ | 上证 50 夏普 0.24 居首，中证 500 不如存银行 |
+| 2 | PE=30 是贵还是便宜？ | 同一数字在不同指数上含义完全相反 |
+| 3 | PE 偏离正常值多远？ | 参数不具备通用性——每个指数需要独立调参 |
+| 4 | 一万种未来的分布？ | 蒙特卡洛不做预测，做风险映射——VaR 95% = -31% |
+| 5 | 外部买卖信号可信吗？ | 138 笔信号，胜率 52.9%，年化 6.7%，不如买入持有 |
+| 6 | 收益率服从正态分布吗？ | 不服从。创业板峰度 +11.95，极端事件是正态预测的数十倍 |
+| 7 | 连涨连跌后走势如何？ | 日历效应因指数性格而异，不存在普适规律 |
+| 8 | 回测是否使用了未来数据？ | 离线均值是在线均值的 4.5 倍——几乎所有回测都在作弊 |
+| 9 | 动量与价值孰优？ | 30 年尺度上纯动量最稳健，但超额仅在 +2-3% |
+| 10 | 风险调整后谁最优？ | 夏普比的核心价值在于排除而非选择 |
+| 11 | 涨跌强度如何量化？ | 跃升等级提供信号强度刻度，但不足以构成独立交易系统 |
 
-## Repository Structure
+## 快速开始
 
-```
-quant-from-zero/
-├── README.md                    # This file
-├── LICENSE                      # Code: MIT / Book: CC BY-NC-ND 4.0
-├── requirements.txt             # Python dependencies (numpy, pandas, matplotlib, akshare)
-├── code/                        # 11 runnable Python lessons (MIT License)
-│   ├── lesson1_descriptive.py
-│   ├── lesson2_pe_quantile.py
-│   ├── ...
-│   └── update_data.py           # Pull latest data from akshare
-├── data/                        # Pre-packaged data (1990-2026)
-│   ├── index_updated.csv        # 16 indices x 8683 days
-│   └── *_pe_weekly.csv          # PE data for 4 indices
-├── output/charts/               # Generated charts from all lessons
-├── book/                        # Book manuscript (CC BY-NC-ND 4.0)
-│   ├── LICENSE                  # Book-specific license
-│   └── chapters/                # 13 chapter files
-└── references/                  # Bibliography
-```
 
-## License
 
-- **Code** (`code/`): [MIT License](LICENSE) — free to use, modify, and distribute.
-- **Book** (`book/`): [CC BY-NC-ND 4.0](book/LICENSE) — free to read and share. Commercial use and derivative works require written authorization.
-- **Data** (`data/`): Public domain — sourced from akshare, a free financial data library.
+数据已预打包——16 个 A 股指数（1990-2026），无需 API Key。
 
-## Data Source
+## 仓库结构
 
-All index data from [akshare](https://github.com/akfamily/akshare). Run `python code/update_data.py` to pull the latest data directly from Chinese exchanges.
 
-## About the Author
 
-**Chen Jia (陈嘉)** — 16 years in asset management, private equity, and carbon finance. Tsinghua-Cornell MBA. This book emerged from the Chen Jia Knowledge Hub, an Obsidian vault with 12,600+ interconnected notes.
+## 许可证
 
-## Star History
+- **代码** ()：[MIT](LICENSE) — 可自由使用、修改、分发。
+- **书稿** ()：[CC BY-NC-ND 4.0](book/LICENSE) — 免费阅读与分享。商用及衍生作品需书面授权。
+- **数据** ()：基于 [akshare](https://github.com/akfamily/akshare) 的公开数据。
 
-If this book helps you, please consider [starring the repo](https://github.com/Justinjchen-Cornell/quant-from-zero) and sharing it with someone who needs it.
+---
+
+<p align="center"><strong>这些策略脚本、Notebook 不是让你去跑量化交易的。</strong><br>它们是一套思维训练工具——让你理解量化思维的边界、学会评估任何策略的有效性、然后把方法论迁移到你真正有信息优势的领域。</p>
+
+<p align="center">陈嘉 · 2026 · <a href="https://github.com/Justinjchen-Cornell">@Justinjchen-Cornell</a></p>
