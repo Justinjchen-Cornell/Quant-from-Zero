@@ -1,12 +1,58 @@
+# License
+
+This repository contains two separately licensed components:
+
+---
+
+## Code (`code/` directory)
+
 MIT License
 
 Copyright (c) 2026 Chen Jia (陈嘉)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
-of the CODE in this repository, to deal in the Code without restriction,
+of the code in the `code/` directory, to deal in the Code without restriction,
 including without limitation the rights to use, copy, modify, merge, publish,
 distribute, sublicense, and/or sell copies of the Code.
 
-The BOOK CONTENT in the book/ directory is NOT covered by this license.
-All rights to the book manuscript are reserved by the author.
-No part of the book may be reproduced or distributed without prior written permission.
+---
+
+## Book (`book/` directory)
+
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+(CC BY-NC-ND 4.0)
+
+Copyright (c) 2026 Chen Jia (陈嘉). All Rights Reserved.
+
+### You are free to:
+
+- **Read** — access and view the book content for personal learning
+- **Share** — copy and redistribute the material in any medium or format
+  (with proper attribution)
+
+### Under the following terms:
+
+- **Attribution** — You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made.
+- **NonCommercial** — You may not use the material for commercial purposes.
+  This includes: selling the book, using it in paid courses, corporate
+  training, or any revenue-generating activity.
+- **NoDerivatives** — You may not remix, transform, or build upon the
+  material. Modified versions may not be distributed.
+
+### Commercial Use
+
+Commercial use of the book content requires a separate written authorization
+from the author. For licensing inquiries, contact the author via GitHub.
+
+### Full License
+
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+---
+
+## Data (`data/` directory)
+
+The data files are sourced from [akshare](https://github.com/akfamily/akshare),
+a free and open-source Chinese financial data library. Redistribution of
+akshare-derived data is permitted under akshare's terms.

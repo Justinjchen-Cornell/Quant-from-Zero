@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#16213e"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bg)"/>
+  
+  <!-- Chart grid lines -->
+  <line x1="100" y1="280" x2="500" y2="280" stroke="#2a2a4a" stroke-width="0.5"/>
+  <line x1="100" y1="220" x2="500" y2="220" stroke="#2a2a4a" stroke-width="0.5"/>
+  <line x1="100" y1="160" x2="500" y2="160" stroke="#2a2a4a" stroke-width="0.5"/>
+  
+  <!-- Chart line - jagged start -->
+  <polyline points="100,240 130,220 160,250 190,210 220,200 250,230 280,180 310,190 340,170 370,190 400,150 430,160 460,140 500,120"
+    fill="none" stroke="#1971c2" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Transformed arrow -->
+  <polyline points="500,120 540,100 580,70"
+    fill="none" stroke="#1971c2" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="580,70 570,78 575,68" fill="#1971c2"/>
+  
+  <!-- Alpha annotation -->
+  <text x="320" y="145" fill="#f08c00" font-family="monospace" font-size="14" opacity="0.8">+44.5%</text>
+  <text x="320" y="165" fill="#c92a2a" font-family="monospace" font-size="14" opacity="0.6">+0.1%</text>
+  
+  <!-- Title -->
+  <text x="300" y="50" fill="#ffffff" font-family="sans-serif" font-size="28" font-weight="bold" text-anchor="middle">从零开始跑量化</text>
+  <text x="300" y="80" fill="#868e96" font-family="sans-serif" font-size="14" text-anchor="middle">11 堂课 × 30 年真实数据</text>
+  
+  <!-- Author -->
+  <text x="300" y="350" fill="#868e96" font-family="sans-serif" font-size="12" text-anchor="middle">陈嘉 著</text>
+  
+  <!-- License badge -->
+  <rect x="460" y="365" width="120" height="20" rx="4" fill="#2a2a4a" stroke="#4a4a6a" stroke-width="0.5"/>
+  <text x="520" y="379" fill="#868e96" font-family="sans-serif" font-size="9" text-anchor="middle">CC BY-NC-ND 4.0</text>
+</svg>
